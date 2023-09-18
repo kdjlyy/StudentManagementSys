@@ -8,8 +8,19 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/StudentManagementSys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: 123456
+  main:
+    banner-mode: off
+  mvc:
+    pathmatch:
+      # 解决swagger3和springboot版本冲突
+      matching-strategy: ant_path_matcher
 
 # 开启 mybatis-plus 的日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+
+swagger:
+  enabled: true
